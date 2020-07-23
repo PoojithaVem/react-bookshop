@@ -4,6 +4,7 @@ node{
        sh '''
         /home/vivek/.nvm/versions/node/v14.0.0/bin/npm install
         /home/vivek/.nvm/versions/node/v14.0.0/bin/npm --version
+        /home/vivek/.nvm/versions/node/v14.0.0/bin/npm start
        '''
     }
  }
