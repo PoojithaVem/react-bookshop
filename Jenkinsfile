@@ -17,7 +17,8 @@ node{
     stage('build'){
         sh '/home/vivek/.nvm/versions/node/v14.0.0/bin/npm install'
     }
-   stage('test'){
-         sh' /home/vivek/.nvm/versions/node/v14.0.0/bin/npm test'
+   stage('run'){
+        sh '/home/vivek/.nvm/versions/node/v14.0.0/bin/npm run build'
    }
+   
  }
