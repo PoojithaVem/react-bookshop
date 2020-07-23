@@ -11,10 +11,13 @@ node{
     stage('checkout scm'){
        git url: 'https://github.com/PoojithaVem/react-bookshop.git'
     }
-    stage('docker'){
+    /*stage('docker'){
         docker.image('node:6-alpine').withRun('-p 3000:3000')
-    }
+    } */
     stage('build'){
-        sh 'npm install'
+        sh '/home/vivek/.nvm/versions/node/v14.0.0/bin/npm install'
     }
+   stage('test'){
+         sh' /home/vivek/.nvm/versions/node/v14.0.0/bin/npm test'
+   }
  }
