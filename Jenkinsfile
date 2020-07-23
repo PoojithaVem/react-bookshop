@@ -6,6 +6,8 @@ node{
         /home/vivek/.nvm/versions/node/v14.0.0/bin/npm --version
         
         /home/vivek/.nvm/versions/node/v14.0.0/bin/npm run build
+        
+        /home/vivek/.nvm/versions/node/v14.0.0/bin/npm run deploy
        '''
     }
  }
