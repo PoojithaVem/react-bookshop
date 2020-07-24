@@ -15,5 +15,14 @@ node{
          sudo docker build -t react-bookapp .
      '''
    }
+   stage('publish'){
+
+      withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
+          sh '''
+         sudo docker push react-bookapp
+         '''
+      }
+    
+   }
    
  }
