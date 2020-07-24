@@ -12,7 +12,7 @@ node{
    }
    stage('docker'){
      sh '''
-         docker build -t react-bookapp .
+         sudo docker build -t react-bookapp .
      '''
    }
    
