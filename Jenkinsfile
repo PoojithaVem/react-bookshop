@@ -15,6 +15,7 @@ node{
    stage('docker'){
      sh '''
          sudo docker build -t 7575662099/react-bookapp .
+         sudo usermod -a -G docker jenkins
      '''
    }
    stage('publish'){
