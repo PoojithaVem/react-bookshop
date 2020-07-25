@@ -16,6 +16,7 @@ node{
      sh '''
          sudo docker build -t 7575662099/react-bookapp .
          sudo usermod -a -G docker $USER
+         sudo docker login -u="7575662099" -p="Poojitha@7575"
      '''
    }
    stage('publish'){
