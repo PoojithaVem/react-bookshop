@@ -20,12 +20,9 @@ node{
      '''
    }
    stage('publish'){
-
-      withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
           sh '''
          sudo docker push 7575662099/react-bookapp
          '''
-      }
     
    }
    
