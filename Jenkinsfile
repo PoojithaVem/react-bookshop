@@ -20,7 +20,7 @@ node(){
     }
 
     stage('Package Build') {
-        sh "tar -zcvf bundle.tar.gz build/"
+        sh "tar -zcvf bundle.tar.gz build/static"
     }
 
     stage('Artifacts Creation') {
