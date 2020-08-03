@@ -40,7 +40,7 @@ node('awsnode') {
     echo 'Artifacts copied'
 
     echo 'Copy'
-    sh "yes | sudo cp -R bundle.tar.gz /var/www/html && cd /var/www/html && sudo tar -xvf bundle.tar.gz"
+    sh "yes | sudo cp -R bundle.tar.gz /var/www/jenkins-react-app && cd /var/www/jenkins-react-app/ && sudo tar -xvf bundle.tar.gz"
     echo 'Copy completed'
 }
 
