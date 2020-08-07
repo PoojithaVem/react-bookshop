@@ -44,7 +44,7 @@ pipeline {
     stage ('Deploy to Dev') {
       steps{
         echo "Deploying to Dev Environment"
-        sh "docker rm -f petclinic || true"
+        sh "docker rm -f reactbookapp || true"
         sh "docker run -d --name=reactbookapp -p 8081:8080 7575662099/reactbookapp"
       }
     }
