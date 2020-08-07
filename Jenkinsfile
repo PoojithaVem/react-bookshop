@@ -10,8 +10,10 @@ pipeline {
     stage ('Build') {
       steps{
         echo "Building Project"
-        sh 'npm install'
-        sh 'npm run build'
+        nodejs('nodejs') {
+         sh 'npm install'
+         sh 'npm run build'
+        }
       }
     }
   //  stage ('Archive') {
