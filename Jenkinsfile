@@ -45,7 +45,7 @@ pipeline {
       steps{
         echo "Deploying to Dev Environment"
         sh "docker rm -f reactbookapp || true"
-        sh "docker run -d --name=reactbookapp -p 3000:80 7575662099/reactbookapp"
+        sh "docker run -d --name=reactbookapp -p 3000:3000 7575662099/reactbookapp"
       }
     }
   }
