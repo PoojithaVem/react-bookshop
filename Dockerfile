@@ -1,23 +1,47 @@
+# Docker Image which is used as foundation to create
+# a custom Docker Image with this Dockerfile
+FROM node:14
+ 
+# A directory within the virtualized Docker environment
+# Becomes more relevant when using Docker Compose later
+WORKDIR /usr/src/app
+ 
+# Copies package.json and package-lock.json to Docker environment
+COPY package*.json ./
+ 
+# Installs all node packages
+RUN npm install
+RUN npm audit fix
+
+# Copies everything over to Docker environment
+COPY . .
+ 
+# Uses port which is used by the actual application
+EXPOSE 3000
+ 
+# Finally runs the application
+CMD [ "npm", "start" ]
+
 # Pull from a base image
-FROM node:12-alpine
+#FROM node:12-alpine
 
 # Copy the files from the current directory to app/
-COPY . app/
+#COPY . app/
 
 # Use app/ as the working directory
-WORKDIR app/
+#WORKDIR app/
 
 # Install dependencies (npm ci is similar to npm i, but for automated builds)
-RUN npm ci --only-production
+#RUN npm ci --only-production
 
 # Build production client side React application
-RUN npm run build
+#RUN npm run build
 
 # Listen on the specified port
-EXPOSE 8080
+#EXPOSE 8080
 
 # Set Node server
-ENTRYPOINT npm run start
+#ENTRYPOINT npm run start
 
 
 #FROM node:alpine
