@@ -1,26 +1,53 @@
+# pull official base image
+FROM node:current
+
+# set working directory
+WORKDIR /
+
+
+# add `/node_modules/.bin` to $PATH
+ENV PATH /node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
+RUN npm i -g npm-check-updates
+RUN ncu -u
+RUN npm install 
+RUN npm install react
+RUN npm install react-scripts@3.4.1 -g 
+
+# add app
+COPY . ./
+
+# start app
+CMD ["npm","start"]
+
+EXPOSE 3000
+
+
 # Docker Image which is used as foundation to create
 # a custom Docker Image with this Dockerfile
-FROM node:14
+#FROM node:14
  
 # A directory within the virtualized Docker environment
 # Becomes more relevant when using Docker Compose later
-WORKDIR /usr/src/app
+#WORKDIR /usr/src/app
  
 # Copies package.json and package-lock.json to Docker environment
-COPY package*.json ./
+#COPY package*.json ./
  
 # Installs all node packages
-RUN npm install
-RUN npm audit fix
+#RUN npm install
+#RUN npm audit fix
 
 # Copies everything over to Docker environment
-COPY . .
+#COPY . .
  
 # Uses port which is used by the actual application
-EXPOSE 3000
+#EXPOSE 3000
  
 # Finally runs the application
-CMD [ "npm", "start" ]
+#CMD [ "npm", "start" ]
 
 # Pull from a base image
 #FROM node:12-alpine
