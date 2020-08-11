@@ -5,8 +5,8 @@ pipeline {
                 steps {
                   echo "Deploying to Prod1"
                   sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@100.26.200.175 docker rm -f reactbookapp || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@100.26.200.175 docker run -d --name=reactbookapp -p 3000:3000 7575662099/reactbookapp"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@3.85.209.117 docker rm -f reactbookapp || true"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@3.85.209.117 docker run -d --name=reactbookapp -p 3000:3000 7575662099/reactbookapp"
                   }
                 }
       }
@@ -14,8 +14,8 @@ pipeline {
                 steps {
                   echo "Deploying to Prod2"
                   sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.226.118.10 docker rm -f reactbookapp || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.226.118.10 docker run -d --name=reactbookapp -p 3000:3000 7575662099/reactbookapp"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.167.61.208 docker rm -f reactbookapp || true"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.167.61.208 docker run -d --name=reactbookapp -p 3000:3000 7575662099/reactbookapp"
                   }
                 }
       }         
