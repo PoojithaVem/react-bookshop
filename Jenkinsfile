@@ -16,12 +16,6 @@ pipeline {
         }
       }
     }
-  //  stage ('Archive') {
-   //   steps{
-   //     echo "Archiving Project"
-   //     archiveArtifacts artifacts: '**/*.jar', followSymlinks: false
-   //   }
-  //  } 
     stage ('Build Docker Image') {
       steps{
         echo "Building Docker Image"
